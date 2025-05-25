@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import books
+from .models import books,students
 import re
 
 class BookSerializer(serializers.ModelSerializer):
@@ -17,3 +17,7 @@ class BookSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({'error': 'isbn must be numeric'})
         return data
 
+class StudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=students
+        fields = '__all__'

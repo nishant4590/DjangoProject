@@ -8,3 +8,11 @@ class books(models.Model):
 
     def __str__(self):
         return self.title
+    
+class students(models.Model):
+    name = models.CharField(max_length=255)
+    std = models.CharField(max_length=255)
+    age = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.name
